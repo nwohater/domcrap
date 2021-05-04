@@ -69,20 +69,25 @@ var data = '';
         var th = document.createElement("th");      // TABLE HEADER.
         th.innerHTML = col[i];
         tr.appendChild(th);
-        //add modal input fields here
+        
+        //add modal labels 
         var modLabel = document.createElement("label");                   
         modLabel.setAttribute('value', col[i]);
+        modLabel.classList = "modal-label"
         modLabel.innerText = col[i];
         document.getElementById("modal-body").appendChild(modLabel);         
+        
         var lineBreak = document.createElement("br");
         document.getElementById("modal-body").appendChild(lineBreak);         
 
-        //add modal input fields here
+        //add modal input fields 
         var modal = document.createElement("Input");                   
         modal.setAttribute('type', 'text');
-        modal.setAttribute('id', col[i]);                     
+        modal.setAttribute('id', col[i]);
+        modal.classList = "modal-input"                     
         document.getElementById("modal-body").appendChild(modal);  
-        document.getElementById("modal-body").appendChild(lineBreak);         
+        var lineBreak2 = document.createElement("br");
+        document.getElementById("modal-body").appendChild(lineBreak2);         
     }
     var th = document.createElement("th");      // TABLE HEADER.
     th.innerHTML = 'Edit';
@@ -96,7 +101,7 @@ var data = '';
             tabCell.innerHTML = jsonData[i][col[j]];
         }
         var tabCell = tr.insertCell(-1);
-        tabCell.innerHTML = 'hello world';
+        tabCell.innerHTML = '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>'
     }
 
     // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
