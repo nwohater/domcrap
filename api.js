@@ -69,6 +69,20 @@ var data = '';
         var th = document.createElement("th");      // TABLE HEADER.
         th.innerHTML = col[i];
         tr.appendChild(th);
+        //add modal input fields here
+        var modLabel = document.createElement("label");                   
+        modLabel.setAttribute('value', col[i]);
+        modLabel.innerText = col[i];
+        document.getElementById("modal-body").appendChild(modLabel);         
+        var lineBreak = document.createElement("br");
+        document.getElementById("modal-body").appendChild(lineBreak);         
+
+        //add modal input fields here
+        var modal = document.createElement("Input");                   
+        modal.setAttribute('type', 'text');
+        modal.setAttribute('id', col[i]);                     
+        document.getElementById("modal-body").appendChild(modal);  
+        document.getElementById("modal-body").appendChild(lineBreak);         
     }
     var th = document.createElement("th");      // TABLE HEADER.
     th.innerHTML = 'Edit';
