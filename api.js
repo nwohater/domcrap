@@ -61,7 +61,7 @@ var data = '';
 
     // CREATE DYNAMIC TABLE.
     var table = document.createElement("table");
-
+    table.classList = "table table-dark table-striped";
     // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
     var tr = table.insertRow(-1);                   // TABLE ROW.
 
