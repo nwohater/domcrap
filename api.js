@@ -1,3 +1,10 @@
+// To make this work you need to install json-server
+//
+// npm install -g json-server
+//
+// make sure you have the db.json created then do this:
+// json-server --watch db.json
+
 
 var data = '';
 
