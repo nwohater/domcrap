@@ -1,0 +1,11 @@
+{
+  "name": "domcrap",
+  "version": "1.0.0",
+  "description": "Dicking around with creating dynamic table from JSON. Looks to be working properly.",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
