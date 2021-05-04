@@ -1,4 +1,6 @@
 
+//Not using this -- Just a different way to build the table.
+
 const jsonData = [{FirstName: 'Pete', LastName: 'Jackson', Age: "39", Sex: 'M'},{FirstName: 'Sheena', LastName: 'Bofeena', Age: "21", Sex: 'F'},{FirstName: 'Larry', LastName: 'Salas', Age: "24", Sex: 'M'}];
 
 //jsonData.forEach(function(key) {
