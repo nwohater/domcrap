@@ -19,8 +19,7 @@ function createSelect(data) {
  
     var select = document.createElement("select");
     select.name = "people";
-    select.id = "peeps";    
-    //select.setAttribute("onchange", function(){createTable(values);});
+    select.id = "peeps";        
     select.addEventListener(
         'change',
         function() { createTable(values); },
