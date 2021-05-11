@@ -1,3 +1,10 @@
+// To make this work you need to install json-server
+//
+// npm install -g json-server
+//
+// make sure you have the db.json created then do this:
+// json-server --watch db.json
+
 
 var data = '';
 
@@ -54,8 +61,12 @@ var data = '';
 
     // CREATE DYNAMIC TABLE.
     var table = document.createElement("table");
+<<<<<<< HEAD
     table.classList = "table table-success table-striped table-hover table-bordered";
 
+=======
+    table.classList = "table table-dark table-striped";
+>>>>>>> 4f6cb33790cf21ebb9e68da351d2d32aa0cbea76
     // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
     var tr = table.insertRow(-1);                   // TABLE ROW.
 
@@ -63,6 +74,25 @@ var data = '';
         var th = document.createElement("th");      // TABLE HEADER.
         th.innerHTML = col[i];
         tr.appendChild(th);
+        
+        //add modal labels 
+        var modLabel = document.createElement("label");                   
+        modLabel.setAttribute('value', col[i]);
+        modLabel.classList = "modal-label"
+        modLabel.innerText = col[i];
+        document.getElementById("modal-body").appendChild(modLabel);         
+        
+        var lineBreak = document.createElement("br");
+        document.getElementById("modal-body").appendChild(lineBreak);         
+
+        //add modal input fields 
+        var modal = document.createElement("Input");                   
+        modal.setAttribute('type', 'text');
+        modal.setAttribute('id', col[i]);
+        modal.classList = "modal-input"                     
+        document.getElementById("modal-body").appendChild(modal);  
+        var lineBreak2 = document.createElement("br");
+        document.getElementById("modal-body").appendChild(lineBreak2);         
     }
     var th = document.createElement("th");      // TABLE HEADER.
     th.innerHTML = 'Edit';
@@ -76,7 +106,7 @@ var data = '';
             tabCell.innerHTML = jsonData[i][col[j]];
         }
         var tabCell = tr.insertCell(-1);
-        tabCell.innerHTML = 'hello world';
+        tabCell.innerHTML = '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>'
     }
 
     // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.

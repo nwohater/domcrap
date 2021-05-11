@@ -1,3 +1,4 @@
+//This is not being used -- This was the proof of concept for using API data to generate html table
 
 //FAKE API DATA
 const jsonData = [{FirstName: 'Pete', LastName: 'Jackson', Age: "39", Sex: 'M'},{FirstName: 'Sheena', LastName: 'Bofeena', Age: "21", Sex: 'F'},{FirstName: 'Larry', LastName: 'Salas', Age: "24", Sex: 'M'}];
