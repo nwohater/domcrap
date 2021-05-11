@@ -60,20 +60,18 @@ var data = '';
     }
 
     // CREATE DYNAMIC TABLE.
-    var table = document.createElement("table");
-<<<<<<< HEAD
-    table.classList = "table table-success table-striped table-hover table-bordered";
-
-=======
+    var table = document.createElement("table");    
+    table.id = "peopleTable";
     table.classList = "table table-dark table-striped";
->>>>>>> 4f6cb33790cf21ebb9e68da351d2d32aa0cbea76
+    
     // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
-    var tr = table.insertRow(-1);                   // TABLE ROW.
+    var header = table.createTHead();    
+    var hdrRow = header.insertRow(-1);                   // HEADER ROW.
 
     for (var i = 0; i < col.length; i++) {
-        var th = document.createElement("th");      // TABLE HEADER.
+        var th = document.createElement("th");    
         th.innerHTML = col[i];
-        tr.appendChild(th);
+        hdrRow.appendChild(th);
         
         //add modal labels 
         var modLabel = document.createElement("label");                   
@@ -94,25 +92,49 @@ var data = '';
         var lineBreak2 = document.createElement("br");
         document.getElementById("modal-body").appendChild(lineBreak2);         
     }
+    
+    //add edit column at end
     var th = document.createElement("th");      // TABLE HEADER.
     th.innerHTML = 'Edit';
-    tr.appendChild(th);
+    hdrRow.appendChild(th);
 
     // ADD JSON DATA TO THE TABLE AS ROWS.
+    var tbody = table.createTBody();
     for (var i = 0; i < jsonData.length; i++) {
-        tr = table.insertRow(-1);
+        tr = tbody.insertRow(-1);
+        console.log("row " + i);
         for (var j = 0; j < col.length; j++) {
             var tabCell = tr.insertCell(-1);
             tabCell.innerHTML = jsonData[i][col[j]];
+            console.log("col " + j);
         }
         var tabCell = tr.insertCell(-1);
         tabCell.innerHTML = '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>'
     }
 
+
+    // Create Footer
+    var footer = table.createTFoot();    
+    var ftrRow = footer.insertRow(-1);                   // HEADER ROW.
+
+    for (var i = 0; i < col.length; i++) {
+        var th = document.createElement("th");    
+        th.innerHTML = col[i];
+        ftrRow.appendChild(th);        
+        console.log ("footer " + i);
+    }
+    
+    //add button at end of columns
+    var th = document.createElement("th");      // TABLE HEADER.
+    th.innerHTML = 'Edit';
+    ftrRow.appendChild(th);
+    
     // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
     var divContainer = document.getElementById("people-table");
     divContainer.innerHTML = "";
     divContainer.appendChild(table);
+    
+    $('#peopleTable').DataTable();
     
 }
 
