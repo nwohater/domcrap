@@ -109,9 +109,10 @@ var data = '';
             console.log("col " + j);
         }
         var tabCell = tr.insertCell(-1);
-        tabCell.innerHTML = '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>'
+        var buttonCrap = `<button onclick="loadEdit('${jsonData[i][col[0]]}')" type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#exampleModal'>Edit</button>`;
+        tabCell.innerHTML = buttonCrap;
+        console.log (tabCell.innerHTML);
     }
-
 
     // Create Footer
     var footer = table.createTFoot();    
@@ -136,6 +137,11 @@ var data = '';
     
     $('#peopleTable').DataTable();
     
+}
+
+async function loadEdit(id){
+    console.log(`loadEdit ${id}`);
+
 }
 
 fetchPerson();
